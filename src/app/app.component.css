@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap');
+* {
+    margin: 35px;
+  }
+h1{
+    font-family: 'EB Garamond', serif;
+font-size: 80px;
+}
+  .item {
+    display: flex;
+    flex-direction: row;
+    background: rgb(249,255,0);
+    background: linear-gradient(266deg, rgba(249,255,0,1) 45%, rgba(175,255,121,1) 57%, rgba(62,153,238,1) 74%);
+-webkit-box-shadow: 4px 4px 39px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 39px 3px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 39px 3px rgba(0,0,0,0.75);
+  }
+  #input{
+    border: none;
+    background-color: rgb(226, 218, 218);
+    padding: 10px;
+    border-radius: 3%;
+    display: inline-block;
+    text-align: center;
+  }
+
