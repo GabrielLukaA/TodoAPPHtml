@@ -41,13 +41,6 @@ export class AppComponent {
       this.usuarios = JSON.parse(tarefas);
     }
   }
-  esconderInput(): void {
-    this.mostraInput = false;
-  }
-  mostrarInput(): void {
-    this.mostraInput = true;
-  
-  }
   salvar(usuario : Pessoa): void{
     this.salvarLocalStorage()
   }

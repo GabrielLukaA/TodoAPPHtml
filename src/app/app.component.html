@@ -10,7 +10,7 @@
   <h1>TASKLIST</h1>
 
 <input placeholder="Nome da tarefa" [(ngModel)]="pessoa.nome" id="input">
-<select [(ngModel)]="pessoa.categoria">
+<select [(ngModel)]="pessoa.categoria" class= "select">
   <option value="to-do">To-do</option>
   <option value="doing">Doing</option>
   <option value="done">Done</option>
@@ -29,7 +29,7 @@
         </select>
         
   <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
-  <Button (click)="salvar(usuario)">atualizar Tarefa</Button>
+  <Button (click)="salvar(usuario)">Atualizar Tarefa</Button>
 </h4>
 </div>
 </body>
