@@ -5,7 +5,10 @@ body{
   background-color: rgb(161, 145, 252);
 
 }
-
+#principal{
+  display: flex;
+  justify-content: space-around;
+}
 * {
 margin: 35px;
   }

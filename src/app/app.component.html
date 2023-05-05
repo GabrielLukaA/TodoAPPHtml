@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <h1>TASKLIST</h1>
 
-<input placeholder="Nome da tarefa" [(ngModel)]="pessoa.nome" id="input">
-<select [(ngModel)]="pessoa.categoria" class= "select">
-  <option value="to-do">To-do</option>
-  <option value="doing">Doing</option>
-  <option value="done">Done</option>
-</select>
-<button (click)="cadastrarUsuario()">Cadastrar</button>
+  <input placeholder="Nome da tarefa" [(ngModel)]="pessoa.nome" id="input">
+  <select [(ngModel)]="pessoa.categoria" class="select">
+    <option value="to-do">To-do</option>
+    <option value="doing">Doing</option>
+    <option value="done">Done</option>
+  </select>
+  <button (click)="cadastrarUsuario()">Cadastrar</button>
+  <div id="principal">
+  <DIV style="width: 33%;">
+    <h4 style="background-color: aqua;">TO DO
+    </h4>
+    <div *ngFor="let usuario of usuarios;index as indice;">
+      <DIV *ngIf="usuario.categoria=='to-do'">
+        <h4>
+          Tarefa {{indice+1}}: {{ usuario.nome }}
+          <select [(ngModel)]="usuario.categoria">
+            <option value="to-do">To-do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
+        </h4>
+      </DIV>
+    </div>
+  </DIV>
+  <DIV style="width: 33%;">
+    <h4 style="background-color: aqua;">DOING</h4>
+    <div *ngFor="let usuario of usuarios;index as indice;">
+      <DIV *ngIf="usuario.categoria=='doing'">
+        <h4>
+          Tarefa {{indice+1}}: {{ usuario.nome }}
+          <select [(ngModel)]="usuario.categoria">
+            <option value="to-do">To-do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
 
-
-<div *ngFor="let usuario of usuarios;index as indice;" class="item">
-  <h4>
-
-    Tarefa {{indice+1}}: {{ usuario.nome }} 
-        <select [(ngModel)]="usuario.categoria">
-          <option value="to-do">To-do</option>
-          <option value="doing">Doing</option>
-          <option value="done">Done</option>
-        </select>
-        
-  <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
-  <Button (click)="salvar(usuario)">Atualizar Tarefa</Button>
-</h4>
+          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
+        </h4>
+      </DIV>
+    </div>
+  </DIV>
+  <DIV style="width: 33%;">
+    <h4 style="background-color: aqua;">DONE
+    </h4>
+    <div *ngFor="let usuario of usuarios;index as indice;">
+      <DIV *ngIf="usuario.categoria=='done'">
+        <h4>
+          Tarefa {{indice+1}}: {{ usuario.nome }}
+          <select [(ngModel)]="usuario.categoria">
+            <option value="to-do">To-do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
+        </h4>
+      </DIV>
+    </div>
+  </DIV>
 </div>
 </body>
+
 </html>
-
-
