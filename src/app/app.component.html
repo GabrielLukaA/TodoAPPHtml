@@ -11,6 +11,11 @@
 <body>
   <h1>TASKLIST</h1>
 
+
+
+  <a routerLink="/categoria">Categoria</a><br>
+  <a routerLink="/tarefas">Tarefas</a><br>
+<router-outlet></router-outlet>
   <input placeholder="Nome da tarefa" [(ngModel)]="pessoa.nome" id="input">
   <select [(ngModel)]="pessoa.categoria" class="select">
     <option value="to-do">To-do</option>
@@ -31,7 +36,7 @@
             <option value="doing">Doing</option>
             <option value="done">Done</option>
           </select>
-          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
           <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
         </h4>
       </DIV>
@@ -49,7 +54,7 @@
             <option value="done">Done</option>
           </select>
 
-          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
           <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
         </h4>
       </DIV>
@@ -67,7 +72,7 @@
             <option value="doing">Doing</option>
             <option value="done">Done</option>
           </select>
-          <Button (click)="removerUsuario(indice)">Remover Tarefa</Button>
+          <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
           <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
         </h4>
       </DIV>

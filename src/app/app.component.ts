@@ -56,7 +56,7 @@ export class AppComponent {
     }
 
   }
-  removerUsuario(indice: number) {
+  removerTarefa(indice: number) {
 
     this.usuarios.splice(indice, 1)
     localStorage.removeItem("Usuários");
