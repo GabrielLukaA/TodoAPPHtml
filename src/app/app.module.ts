@@ -11,16 +11,19 @@ import { CategoriaModule } from 'src/categoria/categoria.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRountingModule,
     CategoriaModule,
-    TarefasModule
+    TarefasModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

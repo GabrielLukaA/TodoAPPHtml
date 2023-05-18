@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OLá</title>
 </head>
+
 <body>
     <h1>Cadastro de categorias</h1>
-<input type="text" placeholder="Nome" [(ngModel)]="nomeCategoria">
-<button (click)="cadastraCategoria()">Cadastrar</button>
+    <input type="text" placeholder="Nome" [(ngModel)]="nome">
+    <button (click)="cadastraCategoria()">Cadastrar</button>
 
 
-<div>
-    <div *ngFor="let categoria of categorias">
-     <p>{{categoria}}</p>
+
+
+    <div>
+        <h5>Categorias cadastradas</h5>
+        <div *ngFor="let categoria of categorias; index as indice;">
+            <p>{{categoria}}</p>
+            <button (click)="removerCategoria(categoria, indice)">remover categoria</button>
+        </div>
+        <select name="Oh shit">
+            <OPTIon *ngFor="let categoria of categorias; index as indice;" value="{{categoria}}">
+                {{categoria}}</OPTIon>
+        </select>
     </div>
-</div>
 </body>
+
 </html>
