@@ -23,11 +23,15 @@
             <div>
                                 <!--Inicia a categoria se houver-->
                 <h1 style="color:aliceblue">{{categoria}}</h1>
-                <div *ngFor="let tarefa of tarefas">
+                <div *ngFor="let tarefa of tarefas;index as indice">
                                     <!--faz uma repetição das tarefas-->
                     <div *ngIf="tarefa.categoria==categoria">
                                         <!--coloca a tarefa na respectiva categoria-->
                         <h3>{{tarefa.nome}}</h3>
+                        <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
+                        <select [(ngModel)]="tarefa.categoria" class="select"  (change)="alterarTarefa(tarefa,$event.target.value )">
+                          <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
+                        </select>
                     </div>
                 </div>
             </div>

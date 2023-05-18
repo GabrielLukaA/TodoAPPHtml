@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NgModel } from "@angular/forms";
 
 @Component({
     templateUrl: './categoria.component.html',
@@ -25,7 +26,7 @@ export class CategoriaComponent implements OnInit {
         var listaTarefas = JSON.parse(localStorage.getItem("Tarefas"))
         for  (let i=0;i<listaTarefas.length;i++){
         if (listaTarefas[i].categoria == categoria){
-            listaTarefas[i] = "";
+            listaTarefas.splice(i,1)
             
             console.log("dentro")
             localStorage.removeItem("Tarefas")

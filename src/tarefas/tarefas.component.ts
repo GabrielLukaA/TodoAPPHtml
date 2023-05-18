@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { NgModel } from "@angular/forms";
+
 interface Tarefa {
   nome: string;
   categoria: string;
@@ -51,50 +52,10 @@ export class TarefasComponent implements OnInit {
       this.tarefas = JSON.parse(tarefas);
     }
   }
-  alterar(tarefa: Tarefa, indice: number): void {
+  alterarTarefa(tarefa: Tarefa): void {
+  localStorage.setItem("Tarefas", JSON.stringify(this.tarefas));
 
-    if (tarefa.categoria == 'to-do') {
-      /*  this.usuarios.splice(indice, 1)
-        localStorage.removeItem("Tarefas");
-        localStorage.setItem("Tarefas", JSON.stringify(this.usuarios));
-        this.usuarios.splice(indice, 1)
-        localStorage.removeItem("UsuariosDoing");
-        localStorage.setItem("UsuariosDoing", JSON.stringify(this.usuariosDoing));
-        this.usuarios.splice(indice, 1)
-        localStorage.removeItem("UsuariosDone");
-        localStorage.setItem("UsuariosDone", JSON.stringify(this.usuariosDone));*/
-      tarefa.categoria = 'to-do'
-      this.usuariosTodo.push(tarefa)
-      localStorage.setItem("UsuariosTodo", JSON.stringify(this.usuariosTodo))
+   
     }
-    else if (tarefa.categoria == 'doing') {
-      /*this.usuarios.splice(indice, 1)
-      localStorage.removeItem("Tarefas");
-      localStorage.setItem("Tarefas", JSON.stringify(this.usuarios));
-      this.usuarios.splice(indice, 1)
-      localStorage.removeItem("UsuariosTodo");
-      localStorage.setItem("UsuariosTodo", JSON.stringify(this.usuariosTodo));
-      this.usuarios.splice(indice, 1)
-      localStorage.removeItem("UsuariosDone");
-      localStorage.setItem("UsuariosDone", JSON.stringify(this.usuariosDone));*/
-      tarefa.categoria = 'doing'
-      this.usuariosDoing.push(tarefa)
-      localStorage.setItem("UsuariosDoing", JSON.stringify(this.usuariosDoing))
-    }
-    else if (tarefa.categoria == 'done') {
-      /*this.usuarios.splice(indice, 1)
-     localStorage.removeItem("Tarefas");
-      localStorage.setItem("Tarefas", JSON.stringify(this.usuarios));
-      this.usuarios.splice(indice, 1)
-      localStorage.removeItem("UsuariosDoing");
-      localStorage.setItem("UsuariosDoing", JSON.stringify(this.usuariosDoing));
-      this.usuarios.splice(indice, 1)
-      localStorage.removeItem("UsuariosTodo");
-      localStorage.setItem("UsuariosTodo", JSON.stringify(this.usuariosTodo));*/
-      tarefa.categoria = 'done'
-      this.usuariosDone.push(tarefa)
-      localStorage.setItem("UsuariosDone", JSON.stringify(this.usuariosDone))
-    }
-
+ 
   }
-}
