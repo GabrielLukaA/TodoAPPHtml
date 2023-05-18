@@ -53,9 +53,7 @@ export class TarefasComponent implements OnInit {
     }
   }
   alterarTarefa(tarefa: Tarefa): void {
-  localStorage.setItem("Tarefas", JSON.stringify(this.tarefas));
-
-   
-    }
- 
+    localStorage.setItem("Tarefas", JSON.stringify(this.tarefas));
   }
+
+}

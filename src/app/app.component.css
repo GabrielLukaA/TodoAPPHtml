@@ -1,50 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond:wght@800&display=swap');
 
-body{
+html,
+body {
   background-color: rgb(161, 145, 252);
-
+  height: 100%;
+  margin: 0;
 }
-#principal{
+
+#principal {
   display: flex;
   justify-content: space-around;
 }
+
 * {
-margin: 35px;
-  }
-  h4{
-    font-family: 'Courier Prime', monospace;
-font-family: 'EB Garamond', serif;
-  }
-h1{
-    font-family: 'EB Garamond', serif;
-font-size: 80px;
+  margin: 35px;
 }
-button{
+
+h4 {
   font-family: 'Courier Prime', monospace;
-font-family: 'EB Garamond', serif;
+  font-family: 'EB Garamond', serif;
+}
+
+h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 80px;
+}
+
+button {
+  font-family: 'Courier Prime', monospace;
+  font-family: 'EB Garamond', serif;
   background-color: rgb(226, 218, 218);
   border-radius: 3%;
   border: none;
   width: 175px;
   height: 30px;
 }
-  .item {
-    display: flex;
-    flex-direction: row;
-    background: rgb(141, 187, 255);
--webkit-box-shadow: 3px 3px 20px 2px rgba(0,0,0,0.75);
--moz-box-shadow: 3px 3px 20px 2px rgba(0,0,0,0.75);
-box-shadow: 3px 3px 20px 2px rgba(0,0,0,0.75);
-  }
-  #input{
-    border: none;
-    background-color: rgb(226, 218, 218);
-    padding: 10px;
-    border-radius: 3%;
-    display: inline-block;
-    text-align: center;
-  }
+
+.item {
+  display: flex;
+  flex-direction: row;
+  background: rgb(141, 187, 255);
+  -webkit-box-shadow: 3px 3px 20px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 20px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 20px 2px rgba(0, 0, 0, 0.75);
+}
+
+#input {
+  border: none;
+  background-color: rgb(226, 218, 218);
+  padding: 10px;
+  border-radius: 3%;
+  display: inline-block;
+  text-align: center;
+}
 
 SELECT {
   border: none;

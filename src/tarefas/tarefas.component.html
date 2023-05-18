@@ -2,131 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <h1>Cadastro de tarefas</h1>
+  <h1>Cadastro de tarefas</h1>
 
-    <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
-    <select [(ngModel)]="tarefa.categoria" class="select">
-        <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
-    </select>
-    <button (click)="cadastrarTarefa()">Cadastrar</button>
-    <div *ngIf="tarefas.length>0">
+  <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
+  <select [(ngModel)]="tarefa.categoria" class="select">
+    <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
+  </select>
+  <button (click)="cadastrarTarefa()">Cadastrar</button>
+
+  <div *ngIf="tarefas.length>0">
     <!--verifica se tem alguma categoria-->
-        <div *ngFor="let categoria of categorias">
-                <!--faz uma repetição das categorias-->
-            <div>
-                                <!--Inicia a categoria se houver-->
-                <h1 style="color:aliceblue">{{categoria}}</h1>
-                <div *ngFor="let tarefa of tarefas;index as indice">
-                                    <!--faz uma repetição das tarefas-->
-                    <div *ngIf="tarefa.categoria==categoria">
-                                        <!--coloca a tarefa na respectiva categoria-->
-                        <h3>{{tarefa.nome}}</h3>
-                        <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
-                        <select [(ngModel)]="tarefa.categoria" class="select"  (change)="alterarTarefa(tarefa,$event.target.value )">
-                          <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+    <div *ngFor="let categoria of categorias">
+      <!--faz uma repetição das categorias-->
+      <div>
+        <!--Inicia a categoria se houver tarefas-->
+        <h1 style="color:aliceblue">{{categoria}}</h1>
+        <div *ngFor="let tarefa of tarefas;index as indice">
+          <!--faz uma repetição das tarefas-->
+          <div *ngIf="tarefa.categoria==categoria">
+            <!--coloca a tarefa na respectiva categoria-->
+            <h3>{{tarefa.nome}}</h3>
+            <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
+            <select [(ngModel)]="tarefa.categoria" class="select" (change)="alterarTarefa(tarefa,$event.target.value )">
+              <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
+            </select>
+          </div>
         </div>
-
-
-
-
+      </div>
     </div>
-    <!--
-
-    <button (click)="cadastrarUsuario()">Cadastrar</button>
-        <select [(ngModel)]="pessoa.categoria" class="select">
-      <option value="to-do">To-do</option>
-      <option value="doing">Doing</option>
-      <option value="done">Done</option>
-    </select>
-    <div id="principal">
-      <DIV style="width: 33%;">
-        <h4 style="background-color: aqua;">TO DO
-        </h4>
-        <div *ngFor="let usuario of usuarios;index as indice;">
-          <DIV *ngIf="usuario.categoria=='to-do'">
-            <h4>
-              Tarefa {{indice+1}}: {{ usuario.nome }}
-              <select [(ngModel)]="usuario.categoria">
-                <option value="to-do">To-do</option>
-                <option value="doing">Doing</option>
-                <option value="done">Done</option>
-              </select>
-              <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
-              <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
-            </h4>
-          </DIV>
-        </div>
-      </DIV>
-      <DIV style="width: 33%;">
-        <h4 style="background-color: aqua;">DOING</h4>
-        <div *ngFor="let usuario of usuarios;index as indice;">
-          <DIV *ngIf="usuario.categoria=='doing'">
-            <h4>
-              Tarefa {{indice+1}}: {{ usuario.nome }}
-              <select [(ngModel)]="usuario.categoria">
-                <option value="to-do">To-do</option>
-                <option value="doing">Doing</option>
-                <option value="done">Done</option>
-              </select>
-  
-              <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
-              <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
-            </h4>
-          </DIV>
-        </div>
-      </DIV>
-      <DIV style="width: 33%;">
-        <h4 style="background-color: aqua;">DONE
-        </h4>
-        <div *ngFor="let usuario of usuarios;index as indice;">
-          <DIV *ngIf="usuario.categoria=='done'">
-            <h4>
-              Tarefa {{indice+1}}: {{ usuario.nome }}
-              <select [(ngModel)]="usuario.categoria">
-                <option value="to-do">To-do</option>
-                <option value="doing">Doing</option>
-                <option value="done">Done</option>
-              </select>
-              <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
-              <Button (click)="alterar(usuario, indice)">Atualizar Tarefa</Button>
-            </h4>
-          </DIV>
-        </div>
-      </DIV>
-    </div>
-    -->
-
-
-
-
-
-
-    <!--<input type="text" placeholder="Nome" [(ngModel)]="nomeTarefa">-->
-    <!--<button (click)="cadastraTarefa()">Cadastrar</button>-->
-
-    <!--
-<div style="display: flex; justify-content: space-between;">
-    <div *ngFor="let categoria of categorias;">
-    {{ categoria }}
-    <hr/>
-    </div>
-   <div *ngFor="let tarefa of getTarefas()">
-    {{ tarega.nome }}
-    </div>
-
-</div>
--->
+  </div>
 </body>
 
 </html>

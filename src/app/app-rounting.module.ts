@@ -4,26 +4,26 @@ import { Route, RouterModule } from "@angular/router";
 import { CategoriaComponent } from "src/categoria/categoria.component";
 import { TarefasComponent } from "src/tarefas/tarefas.component";
 
-const rotas: Route[]=[
-{
-    path:'categoria',
-    component:CategoriaComponent
+const rotas: Route[] = [
+    {
+        path: 'categoria',
+        component: CategoriaComponent
 
-}
-,{
-    path:'tarefas',
-    component:TarefasComponent
+    }
+    , {
+        path: 'tarefas',
+        component: TarefasComponent
 
-},
-{
-    path: " ",
-    redirectTo:'tarefas',
-    pathMatch: 'full'
-}
+    },
+    {
+        path: " ",
+        redirectTo: 'tarefas',
+        pathMatch: 'full'
+    }
 ]
 @NgModule({
-imports:[RouterModule.forRoot(rotas)],
-exports :[RouterModule]
+    imports: [RouterModule.forRoot(rotas)],
+    exports: [RouterModule]
 
 })
 

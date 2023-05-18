@@ -5,17 +5,17 @@ import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
-    declarations:[TarefasComponent 
-    ],
-    imports: [
-      BrowserModule,
-      FormsModule
-      
-      ],
-      providers: [],
-      bootstrap: []
+  declarations: [TarefasComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+
+  ],
+  providers: [],
+  bootstrap: []
 })
 
-export class TarefasModule{
+export class TarefasModule {
 
 }

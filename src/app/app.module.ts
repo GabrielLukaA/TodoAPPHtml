@@ -25,5 +25,5 @@ import { CategoriaModule } from 'src/categoria/categoria.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
- }
+
+}

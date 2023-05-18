@@ -24,17 +24,15 @@ export class CategoriaComponent implements OnInit {
         localStorage.removeItem("Categorias");
         localStorage.setItem("Categorias", JSON.stringify(this.categorias));
         var listaTarefas = JSON.parse(localStorage.getItem("Tarefas"))
-        for  (let i=0;i<listaTarefas.length;i++){
-        if (listaTarefas[i].categoria == categoria){
-            listaTarefas.splice(i,1)
-            
-            console.log("dentro")
-            localStorage.removeItem("Tarefas")
-            localStorage.setItem("Tarefas", JSON.stringify(listaTarefas));
-        }
-        }
+        for (let i = 0; i < listaTarefas.length; i++) {
+            if (listaTarefas[i].categoria == categoria) {
+                listaTarefas.splice(i, 1)
 
-       
+                console.log("dentro")
+                localStorage.removeItem("Tarefas")
+                localStorage.setItem("Tarefas", JSON.stringify(listaTarefas));
+            }
+        }
     }
 
 
