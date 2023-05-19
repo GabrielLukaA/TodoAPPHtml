@@ -9,26 +9,26 @@
 </head>
 
 <body>
-  <h1>Cadastro de tarefas</h1>
-
+  <h1 class="h1-tarefas">Cadastro de tarefas</h1>
+<div class="cadastro-input">
   <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
   <select [(ngModel)]="tarefa.categoria" class="select">
     <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
   </select>
   <button (click)="cadastrarTarefa()">Cadastrar</button>
-
+</div>
   <div *ngIf="tarefas.length>0">
     <!--verifica se tem alguma categoria-->
-    <div *ngFor="let categoria of categorias">
+    <div class="repetidor-categoria" *ngFor="let categoria of categorias">
       <!--faz uma repetição das categorias-->
-      <div>
+      <div class="div-categorias">
         <!--Inicia a categoria se houver tarefas-->
-        <h1 style="color:aliceblue">{{categoria}}</h1>
+        <h1>{{categoria}}</h1>
         <div *ngFor="let tarefa of tarefas;index as indice">
           <!--faz uma repetição das tarefas-->
           <div *ngIf="tarefa.categoria==categoria">
             <!--coloca a tarefa na respectiva categoria-->
-            <h3>{{tarefa.nome}}</h3>
+            <h3 class="h3-tarefas">Tarefa {{indice+1}}: {{tarefa.nome}}</h3>
             <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
             <select [(ngModel)]="tarefa.categoria" class="select" (change)="alterarTarefa(tarefa,$event.target.value )">
               <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>

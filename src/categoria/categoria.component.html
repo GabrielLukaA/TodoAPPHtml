@@ -10,19 +10,17 @@
 
 <body>
     <h1>Cadastro de categorias</h1>
-    <input type="text" placeholder="Nome" [(ngModel)]="nome">
+    <div class="cadastro-input">    
+        <input type="text" placeholder="Nome" [(ngModel)]="nome">
     <button (click)="cadastraCategoria()">Cadastrar</button>
+</div>
 
-    <div>
-        <h5>Categorias cadastradas</h5>
+    <div class="categorias-cadastradas">
+        <h3>Categorias cadastradas</h3>
         <div *ngFor="let categoria of categorias; index as indice;">
             <p>{{categoria}}</p>
             <button (click)="removerCategoria(categoria, indice)">remover categoria</button>
         </div>
-        <select name="Oh shit">
-            <OPTIon *ngFor="let categoria of categorias; index as indice;" value="{{categoria}}">
-                {{categoria}}</OPTIon>
-        </select>
     </div>
 </body>
 

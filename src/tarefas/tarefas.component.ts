@@ -12,10 +12,6 @@ interface Tarefa {
 export class TarefasComponent implements OnInit {
 
 
-
-  usuariosDoing: Tarefa[] = [];
-  usuariosTodo: Tarefa[] = [];
-  usuariosDone: Tarefa[] = [];
   categorias: string[];
   tarefas: Tarefa[] = [];
 

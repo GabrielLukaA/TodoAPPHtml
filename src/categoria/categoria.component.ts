@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NgModel } from "@angular/forms";
+
 
 @Component({
     templateUrl: './categoria.component.html',
