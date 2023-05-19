@@ -15,11 +15,11 @@
     <button (click)="cadastraCategoria()">Cadastrar</button>
 </div>
 
-    <div class="categorias-cadastradas">
+    <div class="categorias-cadastradas" *ngIf="categorias.length>0">
         <h3>Categorias cadastradas</h3>
         <div *ngFor="let categoria of categorias; index as indice;">
-            <p>{{categoria}}</p>
-            <button (click)="removerCategoria(categoria, indice)">remover categoria</button>
+            <h4 style="    font-family: 'Montserrat', sans-serif; color: white;">{{categoria}}</h4   >
+            <button class="button-remover" (click)="removerCategoria(categoria, indice)">Remover</button>
         </div>
     </div>
 </body>

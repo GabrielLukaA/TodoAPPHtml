@@ -11,10 +11,10 @@
 <body>
   <h1 class="h1-tarefas">Cadastro de tarefas</h1>
 <div class="cadastro-input">
-  <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
   <select [(ngModel)]="tarefa.categoria" class="select">
     <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
   </select>
+  <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
   <button (click)="cadastrarTarefa()">Cadastrar</button>
 </div>
   <div *ngIf="tarefas.length>0">
@@ -29,7 +29,7 @@
           <div *ngIf="tarefa.categoria==categoria">
             <!--coloca a tarefa na respectiva categoria-->
             <h3 class="h3-tarefas">Tarefa {{indice+1}}: {{tarefa.nome}}</h3>
-            <Button (click)="removerTarefa(indice)">Remover Tarefa</Button>
+            <Button class="button-remover" (click)="removerTarefa(indice)">Remover Tarefa</Button>
             <select [(ngModel)]="tarefa.categoria" class="select" (change)="alterarTarefa(tarefa,$event.target.value )">
               <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
             </select>
