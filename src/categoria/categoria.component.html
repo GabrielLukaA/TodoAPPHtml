@@ -10,15 +10,15 @@
 
 <body>
     <h1>Cadastro de categorias</h1>
-    <div class="cadastro-input">    
+    <div class="cadastro-input">
         <input type="text" placeholder="Nome" [(ngModel)]="nome">
-    <button (click)="cadastraCategoria()">Cadastrar</button>
-</div>
+        <button (click)="cadastraCategoria()">Cadastrar</button>
+    </div>
 
     <div class="categorias-cadastradas" *ngIf="categorias.length>0">
         <h3>Categorias cadastradas</h3>
         <div *ngFor="let categoria of categorias; index as indice;">
-            <h4 style="    font-family: 'Montserrat', sans-serif; color: white;">{{categoria}}</h4   >
+            <h4 style="    font-family: 'Montserrat', sans-serif; color: white;">{{categoria}}</h4>
             <button class="button-remover" (click)="removerCategoria(categoria, indice)">Remover</button>
         </div>
     </div>

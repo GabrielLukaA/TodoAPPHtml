@@ -10,21 +10,22 @@
 
 <body>
   <h1 class="h1-tarefas">Cadastro de tarefas</h1>
-<div class="cadastro-input">
-  <select [(ngModel)]="tarefa.categoria" class="select">
-    <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
-  </select>
-  <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
-  <button (click)="cadastrarTarefa()">Cadastrar</button>
-</div>
+  <div class="cadastro-input">
+    <select [(ngModel)]="tarefa.categoria" class="select">
+      <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>
+    </select>
+    <input placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome" id="input">
+    <button (click)="cadastrarTarefa()">Cadastrar</button>
+  </div>
   <div *ngIf="tarefas.length>0">
     <!--verifica se tem alguma categoria-->
     <div class="repetidor-categoria" *ngFor="let categoria of categorias">
       <!--faz uma repetição das categorias-->
-      <div class="div-categorias">
+      <div (dragover)="atualizarCat(categoria)" dropzone="true" class="div-categorias">
         <!--Inicia a categoria se houver tarefas-->
         <h1>{{categoria}}</h1>
-        <div *ngFor="let tarefa of tarefas;index as indice">
+        <div draggable="true" (dragend)="atualizarTarefaDrop(tarefa)" *ngFor="let tarefa of tarefas;index as indice">
+
           <!--faz uma repetição das tarefas-->
           <div *ngIf="tarefa.categoria==categoria">
             <!--coloca a tarefa na respectiva categoria-->

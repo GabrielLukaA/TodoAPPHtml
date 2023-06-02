@@ -51,5 +51,11 @@ export class TarefasComponent implements OnInit {
   alterarTarefa(tarefa: Tarefa): void {
     localStorage.setItem("Tarefas", JSON.stringify(this.tarefas));
   }
-
+  atualizarTarefaDrop(tarefa: Tarefa) {
+    tarefa.categoria = JSON.parse(localStorage.getItem("CatDrop"));
+    localStorage.setItem("Tarefas", JSON.stringify(this.tarefas))
+  }
+  atualizarCat(categoria: String) {
+    localStorage.setItem("CatDrop", JSON.stringify(categoria))
+  }
 }
