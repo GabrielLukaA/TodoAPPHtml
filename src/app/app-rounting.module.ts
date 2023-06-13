@@ -3,6 +3,7 @@ import { NgModel } from "@angular/forms";
 import { Route, RouterModule } from "@angular/router";
 import { CategoriaComponent } from "src/categoria/categoria.component";
 import { TarefasComponent } from "src/tarefas/tarefas.component";
+import { PropriedadesComponent } from "./propriedades/propriedades.component";
 
 const rotas: Route[] = [
     {
@@ -15,6 +16,11 @@ const rotas: Route[] = [
         component: TarefasComponent
 
     },
+    {
+    path: 'propriedades',
+    component: PropriedadesComponent
+
+},
     {
         path: " ",
         redirectTo: 'tarefas',

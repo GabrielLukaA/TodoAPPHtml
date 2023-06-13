@@ -11,7 +11,7 @@ interface Tarefa {
 })
 export class TarefasComponent implements OnInit {
 
-
+posicaoATrocar : number;
   categorias: string[];
   tarefas: Tarefa[] = [];
 
@@ -52,8 +52,16 @@ export class TarefasComponent implements OnInit {
     localStorage.setItem("Tarefas", JSON.stringify(this.tarefas));
   }
   atualizarTarefaDrop(tarefa: Tarefa) {
+    let indice = this.tarefas.indexOf(tarefa)
+    let removido = this.tarefas.splice(indice, 1)[0]
+    console.log(indice, removido, this.posicaoATrocar)
+    this.tarefas.splice(this.posicaoATrocar, 0, removido)
     tarefa.categoria = JSON.parse(localStorage.getItem("CatDrop"));
     localStorage.setItem("Tarefas", JSON.stringify(this.tarefas))
+    this.posicaoATrocar = null;
+  }
+  pegarPosicao(tarefa : Tarefa){
+   this.posicaoATrocar =  this.tarefas.indexOf(tarefa)
   }
   atualizarCat(categoria: String) {
     localStorage.setItem("CatDrop", JSON.stringify(categoria))

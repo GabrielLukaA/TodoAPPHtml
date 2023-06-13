@@ -24,7 +24,7 @@
       <div (dragover)="atualizarCat(categoria)" dropzone="true" class="div-categorias">
         <!--Inicia a categoria se houver tarefas-->
         <h1>{{categoria}}</h1>
-        <div draggable="true" (dragend)="atualizarTarefaDrop(tarefa)" *ngFor="let tarefa of tarefas;index as indice">
+        <div draggable="true" (dragend)="atualizarTarefaDrop(tarefa)" (dragover)="pegarPosicao(tarefa)" *ngFor="let tarefa of tarefas;index as indice">
 
           <!--faz uma repetição das tarefas-->
           <div *ngIf="tarefa.categoria==categoria">
