@@ -3,7 +3,7 @@ import { NgModel } from "@angular/forms";
 import { Route, RouterModule } from "@angular/router";
 import { CategoriaComponent } from "src/categoria/categoria.component";
 import { TarefasComponent } from "src/tarefas/tarefas.component";
-import { PropriedadesComponent } from "./propriedades/propriedades.component";
+import { PropriedadesComponent } from "../propriedades/propriedades.component"
 
 const rotas: Route[] = [
     {

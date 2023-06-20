@@ -5,6 +5,7 @@ import { NgModel } from "@angular/forms";
 interface Tarefa {
   nome: string;
   categoria: string;
+  propriedades: any[]
 }
 @Component({
   templateUrl: "./tarefas.component.html"
@@ -17,14 +18,16 @@ posicaoATrocar : number;
 
   tarefa: Tarefa = {
     nome: '',
-    categoria: ''
+    categoria: '',
+    propriedades: null
   }
   cadastrarTarefa() {
 
 
     const tarefa: Tarefa = {
       nome: this.tarefa.nome,
-      categoria: this.tarefa.categoria
+      categoria: this.tarefa.categoria,
+      propriedades:this.tarefa.propriedades
     }
     this.tarefa.nome = ''
     this.tarefas.push(tarefa);

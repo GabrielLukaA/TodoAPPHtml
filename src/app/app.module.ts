@@ -8,7 +8,10 @@ import { AppRountingModule } from './app-rounting.module';
 import { CategoriaComponent } from 'src/categoria/categoria.component';
 import { TarefasModule } from 'src/tarefas/tarefas.module';
 import { CategoriaModule } from 'src/categoria/categoria.module';
-import { PropriedadesModule } from './propriedades/propriedades.module';
+import { PropriedadesModule } from '../propriedades/propriedades.module';
+import { UserRepository } from 'src/repositories/user.repository';
+
+const teste = new AppComponent(new UserRepository);
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { PropriedadesModule } from './propriedades/propriedades.module';
     TarefasModule,
     PropriedadesModule
   ],
-  providers: [],
+  providers: [
+    UserRepository
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

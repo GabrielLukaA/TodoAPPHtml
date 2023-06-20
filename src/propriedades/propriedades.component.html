@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLá</title>
+</head>
+
+<body>
+    <h1>Cadastro de propriedades</h1>
+    <div class="cadastro-input">
+        <input type="text" placeholder="Titulo da  Propriedade" [(ngModel)]="propriedade.titulo">
+        <select [(ngModel)]="propriedade.tipo" class="select">
+          <option value="text">Texto</option>
+          <option value="number">Número</option>
+          <option value="select">Caixa de seleção</option>
+        </select>
+<div *ngIf="propriedade.tipo=='select'">
+  <input type="text" placeholder="Insira a opção do seu select" >
+</div>
+        <button (click)="cadastraPropriedade()">Cadastrar</button>
+    </div>
+
+    <div class="categorias-cadastradas" *ngIf="listaPropriedades.length>0">
+        <h3>Propriedades cadastradas</h3>
+        <div *ngFor="let propriedade of listaPropriedades; index as indice;">
+            <h4 style="    font-family: 'Montserrat', sans-serif; color: white;">{{propriedade.titulo}}</h4>
+            <h4 style="    font-family: 'Montserrat', sans-serif; color: white;">{{propriedade.tipo}}</h4>
+            <button class="button-remover" (click)="removerPropriedade(propriedade,indice)">Remover</button>
+        </div>
+    </div>
+</body>
+
+</html>
