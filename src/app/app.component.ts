@@ -1,6 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { User } from 'src/models/users/user';
+import { UserRepository } from 'src/repositories/user.repository';
 
 interface Tarefa {
   nome: string;

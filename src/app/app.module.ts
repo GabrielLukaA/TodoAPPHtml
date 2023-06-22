@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { UserRepository } from 'src/repositories/user.repository';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRountingModule } from './app-rounting.module';

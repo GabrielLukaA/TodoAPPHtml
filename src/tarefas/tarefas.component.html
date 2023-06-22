@@ -9,7 +9,13 @@
 </head>
 
 <body>
+  <!-- <select [(ngModel)]="userId" name="" id="">
+    <div *ngFor="let user of users; index as indice">
+<option  value="{{user.id}}">{{user.id}}</option>
+</div>
+  </select> -->
   <h1 class="h1-tarefas">Cadastro de tarefas</h1>
+  <!-- <input type="text"> -->
   <div class="cadastro-input">
     <select [(ngModel)]="tarefa.categoria" class="select">
       <option *ngFor="let categoria of categorias" value="{{ categoria }}">{{ categoria }}</option>

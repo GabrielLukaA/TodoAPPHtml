@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { TarefasComponent } from "./tarefas.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { UserRepository } from 'src/repositories/user.repository';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import { FormsModule } from "@angular/forms";
     FormsModule
 
   ],
-  providers: [],
+  providers: [
+    UserRepository
+  ],
   bootstrap: []
 })
 
