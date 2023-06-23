@@ -8,6 +8,8 @@ import { CategoriaComponent } from 'src/categoria/categoria.component';
 import { TarefasModule } from 'src/tarefas/tarefas.module';
 import { CategoriaModule } from 'src/categoria/categoria.module';
 import { PropriedadesModule } from './propriedades/propriedades.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from 'src/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,13 @@ import { PropriedadesModule } from './propriedades/propriedades.module';
     AppRountingModule,
     CategoriaModule,
     TarefasModule,
-    PropriedadesModule
+    PropriedadesModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    UserRepository
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

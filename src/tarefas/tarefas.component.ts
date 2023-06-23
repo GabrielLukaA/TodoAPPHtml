@@ -55,9 +55,7 @@ posicaoATrocar : number;
 
     const listaCategorias = localStorage.getItem('Categorias');
     this.categorias = JSON.parse(listaCategorias);
-    console.log(this.categorias)
 
-    console.log(listaCategorias)
     const tarefas = localStorage.getItem('Tarefas');
     if (tarefas) {
       this.tarefas = JSON.parse(tarefas);
@@ -104,11 +102,14 @@ posicaoATrocar : number;
   constructor(
     private userRepository: UserRepository
   ) {
-    this.users = this.userRepository.getUsers();
-    this.user = this.getUsuarioLogado();
-    console.log(this.user);
-    console.log("oi essa é a lista")
-    console.log(this.users)
+    userRepository.getUsers().subscribe({
+      next: (value) =>{
+        this.users = value
+        console.log(value)
+        this.user = this.getUsuarioLogado();
+      }
+    })
+
   }
 
   hasPermission(permission: string): boolean {
