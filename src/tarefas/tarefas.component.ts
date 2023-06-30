@@ -95,7 +95,7 @@ posicaoATrocar : number;
 
   // Att Prof
 
-  private userId: string = 'igor.guimaraes';
+  private userId: string = '1';
   private users: User[] = [];
   user!: User;
 
@@ -104,8 +104,9 @@ posicaoATrocar : number;
   ) {
     userRepository.getUsers().subscribe({
       next: (value) =>{
-        this.users = value
-        console.log(value)
+        this.users = value;
+        // console.log("Oi user  ")
+        // console.log(this.users)
         this.user = this.getUsuarioLogado();
       }
     })
