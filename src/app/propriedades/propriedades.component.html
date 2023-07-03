@@ -1,3 +1,7 @@
-<p>
-  propriedades works!
-</p>
+<div style="display: flex; flex-direction: column; padding: 30px;">
+<input type="text" [(ngModel)]="id" placeholder="Username">
+<input type="text" [(ngModel)]="name" placeholder="Name">
+<input type="password" [(ngModel)]="password" placeholder="Password">
+<input type="email" [(ngModel)]="email" placeholder="Email">
+<button (click)="fazRequisicao()">O</button>
+</div>
