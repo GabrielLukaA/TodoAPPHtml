@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { forEach } from '@angular/router/src/utils/collection';
 import { User } from 'src/models/users/user';
 import { UserRepository } from 'src/repositories/user.repository';
 @Component({
@@ -23,11 +24,16 @@ export class PropriedadesComponent implements OnInit {
     propertiesPermissions: []
 
   };
-  url: string  = "http://localhost:4300/usuarios/";
+  url: string = "http://localhost:4300/usuarios/";
 
-  fazRequisicao(){
+  passwordLogin: string = '';
+  idLogin: string = '';
+  invalidaPassword: boolean = false;
+  invalidaId: boolean = false;
+
+  fazRequisicao() {
     const usuario = {
-      id:this.id,
+      id: this.id,
       name: this.name,
       password: this.password,
       email: this.email,
@@ -45,7 +51,7 @@ export class PropriedadesComponent implements OnInit {
           },
           body: JSON.stringify(usuario)
         });
-    
+
         if (response.ok) {
           const data = await response.json();
           console.log('Usuário criado:', data);
@@ -63,12 +69,12 @@ export class PropriedadesComponent implements OnInit {
     this.email = ''
     this.password = ''
   }
-  
+
   constructor(
     private userRepository: UserRepository
   ) {
     userRepository.getUsers().subscribe({
-      next: (value) =>{
+      next: (value) => {
         this.users = value;
         // console.log("Oi user  ")
         // console.log(this.users)
@@ -76,8 +82,27 @@ export class PropriedadesComponent implements OnInit {
     })
 
   }
+
+
+  confereLogin() {
+    for(let user of this.users){
+if (user.id == this.idLogin){
+if (user.password == this.passwordLogin){
+console.log("deu")
+this.idLogin = ''
+this.passwordLogin = ''
+} else {
+  this.invalidaPassword = true
+}
+} else {
+  this.invalidaId = true;
+}
+    }
+  }
+
+
   ngOnInit() {
   }
 
-  
+
 }
