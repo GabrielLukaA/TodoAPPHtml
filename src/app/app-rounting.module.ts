@@ -23,6 +23,7 @@ const rotas: Route[] = [
     component: PropriedadesComponent
 
 },
+
     {
         path: " ",
         redirectTo: 'tarefas',
